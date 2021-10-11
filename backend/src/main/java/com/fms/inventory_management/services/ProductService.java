@@ -41,7 +41,7 @@ public class ProductService {
 	}
 
 	public Product fromDTO(ProductDTO objDto) {
-		return new Product(objDto.getId(), objDto.getProdCod(), objDto.getName(), objDto.getUnitMeasurement(),
-				objDto.getPrice(), objDto.getMaterialType());
+		return new Product(objDto.getProdCod(), objDto.getName(), objDto.getUnitMeasurement(), objDto.getPrice(),
+				objDto.getMaterialType());
 	}
 }

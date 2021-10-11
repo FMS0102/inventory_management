@@ -10,12 +10,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fms.inventory_management.dto.TransactionDTO;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
 @Data
@@ -29,7 +27,7 @@ public class InOperation implements Serializable {
 	private String costCenter;
 	private User user;
 
-	Set<TransactionDTO> products = new HashSet<>();
+	Set<TransactionDTO> transactions = new HashSet<>();
 
 	public InOperation(String id, Instant instantMoment, String costCenter, User user) {
 		this.id = id;
@@ -39,11 +37,11 @@ public class InOperation implements Serializable {
 	}
 
 	public void addProducts(TransactionDTO prod) {
-		products.add(prod);
+		transactions.add(prod);
 	}
 
 	public void removeProducts(TransactionDTO prod) {
-		products.remove(prod);
+		transactions.remove(prod);
 	}
 
 }

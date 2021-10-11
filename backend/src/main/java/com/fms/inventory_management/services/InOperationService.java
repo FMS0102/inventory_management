@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fms.inventory_management.dto.InOperationDTO;
+import com.fms.inventory_management.dto.TransactionDTO;
+import com.fms.inventory_management.entities.CurrentInventory;
 import com.fms.inventory_management.entities.InOperation;
+import com.fms.inventory_management.repositories.CurrentInventoryRepository;
 import com.fms.inventory_management.repositories.InOperationRepository;
 import com.fms.inventory_management.services.exceptions.ObjectNotFoundException;
 

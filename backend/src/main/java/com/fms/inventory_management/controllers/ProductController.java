@@ -56,7 +56,8 @@ public class ProductController {
 	public ResponseEntity<Void> insert(@RequestBody ProductDTO objDto) {
 		Product obj = service.fromDTO(objDto);
 		obj = service.insert(obj);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getProdCod())
+				.toUri();
 		return ResponseEntity.created(uri).build();
 	}
 }

@@ -28,7 +28,16 @@ public class InOperationDTO implements Serializable {
 		instantMoment = entity.getInstantMoment();
 		costCenter = entity.getCostCenter();
 		user = entity.getUser();
-		products = entity.getProducts();
+		products = entity.getTransactions();
+		total = totalValueInput(entity);
+	}
+
+	private BigDecimal totalValueInput(InOperation obj) {
+		BigDecimal total = BigDecimal.ZERO;
+		for (TransactionDTO p : obj.getTransactions()) {
+			total = total.add(p.getTotal());
+		}
+		return total;
 	}
 
 }
